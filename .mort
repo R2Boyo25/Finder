@@ -1,0 +1,7 @@
+[_default]
+out = "finder"
+oarg = [
+    "-Ofast",
+    "-g",
+    "-std=c++17"
+]
