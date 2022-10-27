@@ -2,44 +2,6 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkAboutDialog">
-    <property name="can-focus">False</property>
-    <property name="type-hint">dialog</property>
-    <property name="program-name">Finder</property>
-    <property name="version">1.0</property>
-    <property name="copyright" translatable="yes">(C) Kazani 2022</property>
-    <property name="website">https://github.com/r2boyo25/finder</property>
-    <property name="website-label" translatable="yes">Source Code</property>
-    <property name="authors">Kazani</property>
-    <property name="logo-icon-name">edit-find</property>
-    <property name="license-type">gpl-3-0</property>
-    <child internal-child="vbox">
-      <object class="GtkBox">
-        <property name="can-focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox">
-            <property name="can-focus">False</property>
-            <property name="layout-style">end</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-      </object>
-    </child>
-  </object>
-  <object class="GtkImage" id="image1">
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
-    <property name="icon-name">system-run</property>
-  </object>
   <object class="GtkDialog" id="FileSearchDialog">
     <property name="can-focus">False</property>
     <property name="window-position">center-always</property>
@@ -102,26 +64,15 @@
               </packing>
             </child>
             <child>
-              <!-- n-columns=1 n-rows=1 -->
-              <object class="GtkGrid">
+              <object class="GtkIconView">
                 <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="row-homogeneous">True</property>
-                <property name="column-homogeneous">True</property>
+                <property name="can-focus">True</property>
+                <property name="margin">6</property>
                 <child>
-                  <object class="GtkToggleButton" id="RegexButton">
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="receives-default">True</property>
-                    <property name="tooltip-text" translatable="yes">Enable Regex</property>
-                    <property name="image">image1</property>
-                    <property name="always-show-image">True</property>
-                    <accelerator key="r" signal="activate" modifiers="GDK_MOD1_MASK"/>
+                  <object class="GtkCellRendererToggle" id="RegexDisplay">
+                    <property name="active">True</property>
+                    <signal name="toggled" handler="SwapRegex" swapped="no"/>
                   </object>
-                  <packing>
-                    <property name="left-attach">0</property>
-                    <property name="top-attach">0</property>
-                  </packing>
                 </child>
               </object>
               <packing>
@@ -178,5 +129,38 @@
       </object>
     </child>
     <accelerator key="Escape" signal="close"/>
+  </object>
+  <object class="GtkAboutDialog">
+    <property name="can-focus">False</property>
+    <property name="type-hint">dialog</property>
+    <property name="program-name">Finder</property>
+    <property name="version">1.0</property>
+    <property name="copyright" translatable="yes">(C) Kazani 2022</property>
+    <property name="website">https://github.com/r2boyo25/finder</property>
+    <property name="website-label" translatable="yes">Source Code</property>
+    <property name="authors">Kazani</property>
+    <property name="logo-icon-name">edit-find</property>
+    <property name="license-type">gpl-3-0</property>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
   </object>
 </interface>

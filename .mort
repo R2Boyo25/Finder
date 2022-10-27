@@ -3,5 +3,23 @@ out = "finder"
 oarg = [
     "-Ofast",
     "-g",
-    "-std=c++17"
+    "-std=c++17",
+    "$(pkg-config gtk+-3.0 gmodule-2.0 --cflags --libs)",
+    "-export-dynamic"
 ]
+
+l = [
+    "pthread"
+]
+
+[[deps]]
+url = "https://github.com/r2boyo25/mfind"
+cpath = "."
+ipath = "mfind"
+exclude = ["main.cpp.old", "main.cpp"]
+
+[[deps]]
+url = "https://github.com/vit-vit/ctpl"
+cpath = "."
+ipath = "ctpl"
+exclude = ["example.cpp", "LICENSE", "README.md", "ctpl.h"]
